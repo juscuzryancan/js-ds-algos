@@ -1,0 +1,23 @@
+{
+  "name": "js-ds-algos",
+  "version": "1.0.0",
+  "description": "My own implementation of each DS and Algo (Traditional and Interview)",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juscuzryancan/js-ds-algos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juscuzryancan/js-ds-algos/issues"
+  },
+  "homepage": "https://github.com/juscuzryancan/js-ds-algos#readme",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}
