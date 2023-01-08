@@ -16,6 +16,7 @@ class LinkedList {
   constructor(){
     this.head = null;
     this.tail = null;
+    this.iterator = null;
     this.length = 0;
   }
 
@@ -105,6 +106,55 @@ class LinkedList {
     return this.length === 0;
   }
 
+  placeIterator() {
+    this.iterator = this.head;
+  }
+
+  removeIterator() {
+    if(this.offEnd()) {
+      throw new Error("NoSuchElementException")
+    }
+
+    let prev = this.head;
+    while(prev.next !== this.iterator){
+      prev = prev.next;
+    }
+
+    prev.next = this.iterator.next
+    this.length--;
+  }
+
+  getIterator() {
+    if(this.offEnd()) {
+      throw new Error("NoSuchElementException")
+    }
+
+    return this.iterator.data; 
+  }
+
+  addIterator(data) {
+    const node = new Node(data); 
+
+    if(this.iterator.next === null) {
+      this.tail = node;
+      this.iterator.next = node;
+    } else {
+      let temp = this.iterator.next;
+      this.iterator.next = node;
+      node.next = temp;
+    }
+    
+    this.length++;
+  }
+
+  advanceIterator() {
+    this.iterator = this.iterator.next;
+  }
+
+  offEnd() {
+    return this.iterator === null;
+  }
+
   toString() {
     let string = `Head: ${(this.head) ? this.head.toString(): "null"} \nTail: ${(this.tail) ? this.tail.toString() : "null"} \nLength: ${this.length}`;
 
@@ -125,6 +175,7 @@ class LinkedList {
 }
 
 
+//TODO: Move to a separate test file
 const list355 = new LinkedList();
 
 testException(() => {
