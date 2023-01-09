@@ -4,7 +4,7 @@
   "description": "My own implementation of each DS and Algo (Traditional and Interview)",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "url": "https://github.com/juscuzryancan/js-ds-algos/issues"
   },
   "homepage": "https://github.com/juscuzryancan/js-ds-algos#readme",
-  "dependencies": {
+  "devDependencies": {
     "jest": "^29.3.1"
   }
 }

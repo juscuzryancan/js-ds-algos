@@ -1,5 +1,3 @@
-const { testException } = require("../utils");
-
 class Node {
   constructor(data) {
     this.data = data;
@@ -24,6 +22,10 @@ class LinkedList {
   * 
   */
   addFirst(data) {
+    if(data === null || data === undefined) {
+
+    }
+
     const node = new Node(data);
     if (this.isEmpty()) {
       this.head = node;
@@ -87,7 +89,7 @@ class LinkedList {
       throw new Error("NoSuchElementException")
     }
 
-    return this.head;
+    return this.head.data;
   }
 
   getLast() {
@@ -95,7 +97,7 @@ class LinkedList {
       throw new Error("NoSuchElementException")
     }
 
-    return this.tail;
+    return this.tail.data;
   }
 
   getLength() {
@@ -174,35 +176,6 @@ class LinkedList {
   }
 }
 
-
-//TODO: Move to a separate test file
-const list355 = new LinkedList();
-
-testException(() => {
-  list355.getFirst();
-});
-
-testException(() => {
-  list355.getLast();
-});
-
-list355.addFirst(5);
-list355.addFirst(5);
-list355.addFirst(3);
-console.log(list355.toString())
-
-list355.removeLast()
-console.log("after remove last",list355.toString())
-
-list355.removeFirst()
-console.log("after removefirst", list355.toString())
-
-list355.removeFirst();
-
-testException(() => {
-  list355.removeFirst();
-});
-
-testException(() => {
-  list355.removeLast();
-});
+module.exports = { 
+  LinkedList 
+};
