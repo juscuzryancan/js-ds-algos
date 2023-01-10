@@ -118,12 +118,12 @@ describe("LinkedList", () => {
     const list = new LinkedList();
 
     it("returns true when the list is not empty", () => {
-      expect(list.getLength()).toEqual(0);
+      expect(list.isEmpty()).toEqual(true);
     })
 
-    it("returns true when the list is not empty", () => {
+    it("returns false when the list is not empty", () => {
       list.addFirst(2)
-      expect(list.getLength()).toEqual(0);
+      expect(list.isEmpty()).toEqual(false);
     })
   });
 })

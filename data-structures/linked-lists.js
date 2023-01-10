@@ -28,8 +28,7 @@ class LinkedList {
 
     const node = new Node(data);
     if (this.isEmpty()) {
-      this.head = node;
-      this.tail = node;
+      this.head = this.tail = node;
     } else {
       node.next = this.head;
       this.head = node;
