@@ -18,6 +18,22 @@ class LinkedList {
     this.length = 0;
   }
 
+  copy() {
+    if(this.isEmpty()) {
+      return new Node();
+    }
+
+
+    let newList = new LinkedList();
+
+    let curr = this.head;
+    while (curr) {
+      newList.addLast(curr.data);
+      curr = curr.next;
+    }
+    return newList;
+  }
+
   addFirst(data) {
     if(data === null || data === undefined) {
       throw new Error("EmptyParameterError");

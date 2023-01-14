@@ -15,6 +15,18 @@ describe("LinkedList", () => {
     })
   })
 
+  describe("Copy Constructor", () => {
+    it("Creates a new instance of a linkedlist with the same data", () => {
+      const list = new LinkedList();
+      list.addLast(2)
+      list.addLast(2)
+      list.addLast(2)
+      const newList = list.copy();
+      expect(list).toEqual(newList);
+      expect(list).not.toBe();
+    })
+  });
+
   describe("addFirst", () => {
     const list = new LinkedList();
     it("Sets head and tail to the newly added node when list is empty", () => {
