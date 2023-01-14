@@ -18,12 +18,9 @@ class LinkedList {
     this.length = 0;
   }
 
-  /**
-  * 
-  */
   addFirst(data) {
     if(data === null || data === undefined) {
-
+      throw new Error("EmptyParameterError");
     }
 
     const node = new Node(data);
@@ -37,6 +34,10 @@ class LinkedList {
   }
 
   addLast(data) {
+    if(data === null || data === undefined) {
+      throw new Error("EmptyParameterError");
+    }
+
     const node = new Node(data);
     if (this.isEmpty()) {
       this.head = node;
@@ -134,6 +135,10 @@ class LinkedList {
   }
 
   addIterator(data) {
+    if(data === null || data === undefined) {
+      throw new Error("EmptyParameterError");
+    }
+
     const node = new Node(data); 
 
     if(this.iterator.next === null) {
