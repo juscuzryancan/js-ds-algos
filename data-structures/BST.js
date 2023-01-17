@@ -9,7 +9,6 @@ class Node {
 class BST {
   constructor() {
     this.root = null;
-    this.size = 0;
   }
 
   copy() {
@@ -33,28 +32,51 @@ class BST {
   }
 
   getSize() {
+    let count = 0;
 
-  }
+    const helper = (node) => {
+      if (!node) {
+        return;
+      }
+      
+      count++;
+      helper(node.left)
+      helper(node.right)
+    }
 
-  getSubTreeSize(node) {
-
+    helper(this.root);
+    return count;
   }
 
   getHeight() {
+    const helper = (node) => {
+      if(!node) {
+        return 0; 
+      } else if (!node.left && !node.right) {
+        return 1;  
+      } else {
+        return Math.max(helper(node.left), helper(node.right)) + 1;
+      }
+    }
 
-  }
-
-  getSubTreeHeight(node){
-
+    return helper(this.root);
   }
 
   findMin() {
+    if (this.root === null) {
+      throw new Error("NoSuchElementException");
+    }
 
+    const helper = (node) => {
+      if (!node.left) {
+        return node.data;
+      }    
+      helper(node.left);
+    }
+
+    return helper(this.root);
   }
 
-  findSubTreeMin(node) {
-
-  }
 
   findMax() {
 
